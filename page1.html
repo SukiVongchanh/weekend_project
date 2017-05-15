@@ -1,0 +1,61 @@
+<!DOCTYPE htmtl>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>My Awesome First Web Page</title>
+	<link rel="stylesheet" type="text/css" href="page1.css" />
+	<script>
+	function msgBox(mystring)
+	{
+		alert (mystring)
+	}	
+	function DoProduct(mystring1, mystring2)
+	{
+		var answer = mystring1 * mystring2
+		alert(answer)
+	}
+	function GetCrazy(colorchoice){
+		document.body.style.backgroundColor=colorchoice
+	}
+	function GetPreference(colortype, colorchoice){
+		if (colortype='word')
+			{	document.body.style.backgroundColor=colorchoice
+			} else{
+				document.body.style.backgroundColor='#' + colorchoice
+			}
+	}
+	</script>
+</head>
+<body>
+<form>
+	<input type="text" name="box1" />
+	<input type="button" name="submit" value="Show Me" onClick="msgBox(form.box1.value)">
+</form>
+<p>Simple Math:</p>
+<form name="form2">
+	<input type="text" name="num1" size="5"/> multiply by:
+	<input type="text" name="num2" size="5"/>	
+	<input type="button" name="submit2" value="Multiply" onclick="DoProduct(form.num1.value,form.num2,value)"/>
+</form>
+<h1>Color Choices</h1>
+<form name="form3">
+	<p>make me: </p>
+	<input type="button" value="Red" onClick="GetCrazy('red')">
+	<input type="button" value="Yellow" onClick="GetCrazy('yellow')">
+	<input type="button" value="Green" onClick="GetCrazy('green')">
+	<input type="button" value="Blue" onClick="GetCrazy('blue')">
+</form>
+<h1>Color Picker</h1>
+<form
+>	<p>Enter color as
+	Name<input type="radio" name="colortype" value="word" onclick="form4.temp.value='word'" />
+	or Hex <input type="radio" name="colortype" value="hex" onclick="form4.temp.value='hex'" />
+	</p>
+	<p>
+		color: <input type="text" name="colorchoice" />
+		<input type="button" name="submit4" value="Do It" onclick="GetPreference(form4.temp.value,form4.colorchoice.value)" />
+	</p>
+	<input type="hidden" name="temp" value="word" />
+</form>
+</body>
+</html>
